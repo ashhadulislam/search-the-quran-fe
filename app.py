@@ -8,6 +8,9 @@ import requests
 
 import json
 
+import time
+import os
+import pickle
 
 
 # def setup_app(application):
@@ -38,10 +41,16 @@ def search_in_quran():
         return "Please enter alphabets"
     elif " " in word:
         return "Please enter single word"
+
+    #this part to do the grunt work
     url_built="https://iqrah.herokuapp.com/search/"+str(word)
     print(url_built)
     result=requests.get(url_built).content
     result = json.loads(result)
+    
+            
+
+    
 
     # result=str(result)
     # result = result.replace("'", "\"")
@@ -62,11 +71,11 @@ def search_in_quran():
     '''
     
     # return str(result)
-
-
-
     
     return render_template('index.html',result = result)
+
+
+
 
     
 
