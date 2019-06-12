@@ -4,36 +4,6 @@
 
 
 
-<div class = "container">
-{% if result_string %}
-	<p>{{ result_string }}</p>
-{% else %}
-    <p>No Results yet.</p>
-{% endif %}
-
-</div>
-
-
-
-
-<!-- this part to get the csv file -->
-<form action="/stuff" method="post">
-
-<div class = "container">
-{% if reviews_csv %}
-	  <!-- <form action="/get_reviews_csv"> -->
-	    <div class="form-group">
-	      <input type="hidden" class="form-control" id="reviews_csv" name="reviews_csv" value="{{reviews_csv}}">
-	    </div>
-	    <button type="submit" class="btn btn-default">Get CSV</button>
-	  </form>
-{% else %}
-    <p>No csv yet.</p>
-{% endif %}
-
-</div>
-</form>
-
 
 
 <!-- this part to get the word cloud -->
@@ -42,6 +12,8 @@
 
 <div class="container">
   <h2>Here are your results</h2>
+  <p>Click on the titles to minimize the windows</p>
+
 
   <div class="panel-group" id="accordion">
 
