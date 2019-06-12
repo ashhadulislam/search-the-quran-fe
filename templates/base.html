@@ -1,0 +1,53 @@
+
+<html>
+<head>
+  <title>The android app review viz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+	
+
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="/search_in_quran" method="post">
+
+
+
+<div class="container">
+	  <h2>Details</h2>
+	  <!-- <form action="/get_reviews"> -->
+	    <div class="form-group">
+	      <label for="App URL">Enter the English word that you want to search in the meaning of the Quran:</label>
+
+
+	      {% if word_in_quran %} 
+	      	<input type="text" class="form-control" id="word_in_quran" value="{{word_in_quran}}" name="word_in_quran">
+
+ 	      {% else %}
+	      	<input type="text" class="form-control" id="word_in_quran" placeholder="Example: compassion" name="word_in_quran">
+      	{% endif %}
+	    </div>
+
+	    
+	    <button type="submit" class="btn btn-default">Submit</button>
+	  </form>
+</div>
+
+
+</form>
+
+
+<div>
+	
+	{% block body %}{% endblock %}
+</div>
+
+
+</html>
