@@ -41,12 +41,16 @@
                 </thead>
                 <tbody>
                   {% for verse_details in value %}
-                  <tr>
-                    <td>{{verse_details["Surah"]}}</td>
-                    <td>{{verse_details["Ayah"]}}</td>
-                    <td>{{verse_details["Text"]}}</td>
-                    
-                  </tr>
+                    {% if verse_details["Proximity"] >= 85 %}
+
+
+                      <tr>
+                        <td>{{verse_details["Surah"]}}</td>
+                        <td>{{verse_details["Ayah"]}}</td>
+                        <td>{{verse_details["Text"]}}</td>
+                        
+                      </tr>
+                    {% endif %}
 
                     {% endfor %}
 
