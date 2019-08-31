@@ -43,7 +43,7 @@ def search_in_quran():
         return "Please enter single word"
 
     #this part to do the grunt work
-    url_built="https://iqrah.herokuapp.com/search/"+str(word)
+    url_built="https://iqrah.herokuapp.com/search/quran/yuali/"+str(word)
     print(url_built)
     result=requests.get(url_built).content
     result = json.loads(result)
